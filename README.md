@@ -7,8 +7,10 @@ It have three main features.
 ![Architecture](https://raw.githubusercontent.com/Fykec/RNCachingURLProtocol/master/Architecture/RNCachingURLProtocol%2BHybirdApp.png)
 
 1. Cache request for html, images, js, etc.
+
 2. Support reload no cache by adding http header key **RNCachingReloadIgnoringCacheHeader**, You can display cache to user first, and then load new rescource in background.
-3. Host white list and exception rules, host list can only cache for your own hosts and CDNs, no need cache for 3rd services. exception rules that is regex can match the url string, you can use something like **xxx.com/api/** to filter out the api call.
+
+3. Host white list and exception rules, host list can only cache for your own hosts and CDNs, no need cache for 3rd-party services. exception rules that are regular expresstions you can match the url string. you can use something like **xxx.com/api/** to filter out the api call.
 
 # USAGE
 

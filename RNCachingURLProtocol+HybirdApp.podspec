@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
-  s.name         = "RNCachingURLProtocol+HybirdApp."
+  s.name         = "RNCachingURLProtocol+HybirdApp"
   s.version      = "0.0.1"
-  s.summary      = "RNCachingURLProtocol+HybirdApp.."
+  s.summary      = "RNCachingURLProtocol+HybirdApp."
 
   s.description  = <<-DESC
-                   RNCachingURLProtocol+HybirdApp.
+                   RNCachingURLProtocol+HybirdApp
                    DESC
   s.homepage     = "https://github.com/Fykec/RNCachingURLProtocol"
   s.license      = 'MIT'

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EA04DC58-AA55-4569-A8CA-B3DE94482357</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CachedWebView</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1678A99058B8D392CF2C3862894C876EFB354C16</key>
+		<string>git.bbtechgroup.com:currant/currant.git</string>
+		<key>7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB</key>
+		<string>https://github.com/Fykec/RNCachingURLProtocol.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CachedWebView.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1678A99058B8D392CF2C3862894C876EFB354C16</key>
+		<string>../../../workspace/currant</string>
+		<key>7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Fykec/RNCachingURLProtocol.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1678A99058B8D392CF2C3862894C876EFB354C16</string>
+			<key>IDESourceControlWCCName</key>
+			<string>currant</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RNCachingURLProtocol</string>
+		</dict>
+	</array>
+</dict>
+</plist>

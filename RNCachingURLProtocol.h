@@ -59,13 +59,17 @@
 //    [Drop-in offline caching for UIWebView (and NSURLProtocol)](http://robnapier.net/blog/offline-uiwebview-nsurlprotocol-588).
 
 #import <Foundation/Foundation.h>
+#import "RNCachedData.h"
+#import "RNCache.h"
+
+extern NSString *const RNCachingReloadIgnoringCacheHeader;
+
+
 
 @interface RNCachingURLProtocol : NSURLProtocol
 
 + (NSSet *)supportedSchemes;
 + (void)setSupportedSchemes:(NSSet *)supportedSchemes;
 
-- (NSString *)cachePathForRequest:(NSURLRequest *)aRequest;
-- (BOOL) useCache;
 
 @end

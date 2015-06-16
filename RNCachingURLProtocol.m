@@ -78,10 +78,6 @@ static NSSet *RNCachingSupportedSchemes;
     if ([[self supportedSchemes] containsObject:[[request URL] scheme]])
     {
 
-        if ([request valueForHTTPHeaderField:RNCachingReloadIgnoringCacheHeader]) {
-            return YES;
-        }
-
         // only handle http requests we haven't marked with our header.
         if ([request valueForHTTPHeaderField:RNCachingURLHeader] == nil) {
             return YES;
@@ -161,7 +157,6 @@ static NSSet *RNCachingSupportedSchemes;
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)response
 {
 
-    //TODO in iOS 7.3 not work?
     if ([request valueForHTTPHeaderField:RNCachingReloadIgnoringCacheHeader]) {
         NSMutableURLRequest *connectionRequest =
 #if WORKAROUND_MUTABLE_COPY_LEAK

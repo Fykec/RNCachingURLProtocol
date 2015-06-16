@@ -1,37 +1,53 @@
-# BACKGROUND
+# RNCachingURLProtocol+HybirdApp
 
-RNCachingURLProtocol is a simple shim for the HTTP protocol (that’s not
-nearly as scary as it sounds). Anytime a URL is downloaded, the response is
-cached to disk. Anytime a URL is requested, if we’re online then things
-proceed normally. If we’re offline, then we retrieve the cached version.
+RNCachingURLProtocol+HybirdApp is base on [RNCachingURLProtocol](https://github.com/rnapier/RNCachingURLProtocol) and [EGOCache](https://github.com/enormego/EGOCache). Working For the situation that Hybird App cache web resources for making url load more fast.
 
-The point of RNCachingURLProtocol is mostly to demonstrate how this is done.
-The current implementation is extremely simple. In particular, it doesn’t
-worry about cleaning up the cache. The assumption is that you’re caching just
-a few simple things, like your “Latest News” page (which was the problem I
-was solving). It caches all HTTP traffic, so without some modifications, it’s
-not appropriate for an app that has a lot of HTTP connections (see
-MKNetworkKit for that). But if you need to cache some URLs and not others,
-that is easy to implement.
+It have three main features.
 
-You should also look at [AFCache](https://github.com/artifacts/AFCache) for a
-more powerful caching engine that is currently integrating the ideas of
-RNCachingURLProtocol.
+![Architecture](https://raw.githubusercontent.com/Fykec/RNCachingURLProtocol/master/Architecture/RNCachingURLProtocol%2BHybirdApp.png)
+
+1. Cache request for html, images, js, etc.
+2. Support reload no cache by adding http header key **RNCachingReloadIgnoringCacheHeader**, You can display cache to user first, and then load new rescource in background.
+3. Host white list and exception rules, host list can only cache for your own hosts and CDNs, no need cache for 3rd services. exception rules that is regex can match the url string, you can use something like **xxx.com/api/** to filter out the api call.
 
 # USAGE
 
-1. To build, you will need the Reachability code from Apple (included). That requires that you link with
-   `SystemConfiguration.framework`.
+1. Include by Cocoapods
+`pod 'RNCachingURLProtocol+HybirdApp', :git => "git@github.com:Fykec/RNCachingURLProtocol.git"`.
 
 2. At some point early in the program (usually `application:didFinishLaunchingWithOptions:`),
    call the following:
 
-      `[NSURLProtocol registerClass:[RNCachingURLProtocol class]];`
+      ```
+    [RNCachingURLProtocol setSupportedSchemes:[NSSet setWithArray:@[@"http", @"https"]]];
+    [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
+    [[RNCache sharedInstance] setDefaultTimeoutInterval:7 * 24 * 60 * 60];//7 days for cache a resource
+    [[RNCache sharedInstance] setHostList:@[@"github.com", @"assets-cdn.github.com", @"collector-cdn.github.com"]];// host and CDNs
+    [[RNCache sharedInstance] setExceptionRules:@[@"api.github.com"]];//no cache for api call
+      ```
 
-3. There is no step 3.
+3. If you want load new web resource after load cache you can
 
-For more details see
-   [Drop-in offline caching for UIWebView (and NSURLProtocol)](http://robnapier.net/blog/offline-uiwebview-nsurlprotocol-588).
+	```
+	 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:webView.request.URL
+                                                               cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                                           timeoutInterval:600.0];
+        [request setValue:@"" forHTTPHeaderField:RNCachingReloadIgnoringCacheHeader];
+        __weak typeof(self)weakSelf = self;
+
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+            NSURLResponse *response = nil;
+            NSData *data = nil;
+            NSError *error = nil;
+            data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [weakSelf updateData:data response:response];
+            });
+        });
+	```
+
+For more details see [ViewController Code](https://github.com/Fykec/RNCachingURLProtocol/blob/master/CachedWebView/ViewController.m)
+   
 
 # EXAMPLE
 

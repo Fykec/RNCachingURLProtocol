@@ -94,5 +94,15 @@
     }
 }
 
+- (void)clearCache
+{
+    [[EGOCache globalCache] clearCache];
+}
+
+- (void)removeCacheForRequest:(NSURLRequest *)request {
+    [[EGOCache globalCache] removeCacheForKey:[self keyForRequest:request]];
+}
+
+
 
 @end

@@ -25,4 +25,8 @@
 
 - (void)saveCache:(RNCachedData *)cache forRequest:(NSURLRequest *)request;
 
+- (void)clearCache;
+
+- (void)removeCacheForRequest:(NSURLRequest *)request
+
 @end

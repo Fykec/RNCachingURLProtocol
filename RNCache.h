@@ -27,6 +27,6 @@
 
 - (void)clearCache;
 
-- (void)removeCacheForRequest:(NSURLRequest *)request
+- (void)removeCacheForRequest:(NSURLRequest *)request;
 
 @end

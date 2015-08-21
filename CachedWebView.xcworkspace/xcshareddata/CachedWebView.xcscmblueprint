@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB" : 0,
+    "1678A99058B8D392CF2C3862894C876EFB354C16" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EA04DC58-AA55-4569-A8CA-B3DE94482357",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB" : "RNCachingURLProtocol",
+    "1678A99058B8D392CF2C3862894C876EFB354C16" : "workspace\/currant"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CachedWebView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CachedWebView.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.bbtechgroup.com:currant\/currant.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1678A99058B8D392CF2C3862894C876EFB354C16"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Fykec\/RNCachingURLProtocol.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7F92EB6CF043F9BD4F5B04089D596AAB21D87CDB"
+    }
+  ]
+}

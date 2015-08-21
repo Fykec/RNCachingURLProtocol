@@ -43,9 +43,9 @@
 }
 
 - (BOOL)isRequestPassRules:(NSURLRequest *)request {
-    NSString *host = request.URL.host;
+    NSString *authority = request.URL.port? [NSString stringWithFormat:@"%@:%@", request.URL.host, request.URL.port]: request.URL.host;
     NSString *urlStr = request.URL.absoluteString;
-    if ([_hostList containsObject:host]) {
+    if ([_hostList containsObject:authority]) {
         __block id ret = nil;
         [_exceptionRules enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             NSRegularExpression *ex = [NSRegularExpression regularExpressionWithPattern:obj options:0 error:nil];

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2CFF2D491B2FD53E0037B348 /* RNCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF2D461B2FD53E0037B348 /* RNCache.m */; };
-		2CFF2D4A1B2FD53E0037B348 /* RNCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFF2D481B2FD53E0037B348 /* RNCachedData.m */; };
+		2C4AAA8D1B870C550048C4A6 /* RNCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AAA8A1B870C550048C4A6 /* RNCache.m */; };
+		2C4AAA8E1B870C550048C4A6 /* RNCachedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AAA8C1B870C550048C4A6 /* RNCachedData.m */; };
 		C800AAE8166E77B20027E1E5 /* NSString+Sha1.m in Sources */ = {isa = PBXBuildFile; fileRef = C800AAE7166E77B20027E1E5 /* NSString+Sha1.m */; };
 		D430D40234C07E1889119C84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 679C9CF31552085B1B4E437A /* libPods.a */; };
 		FB237ECE14D5B86100F30AD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB237ECD14D5B86100F30AD8 /* UIKit.framework */; };
@@ -26,10 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CFF2D451B2FD53E0037B348 /* RNCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNCache.h; path = ../../workspace/currant/source/ios/currant/Library3rd/RNCachingURLProtocol/RNCache.h; sourceTree = "<group>"; };
-		2CFF2D461B2FD53E0037B348 /* RNCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNCache.m; path = ../../workspace/currant/source/ios/currant/Library3rd/RNCachingURLProtocol/RNCache.m; sourceTree = "<group>"; };
-		2CFF2D471B2FD53E0037B348 /* RNCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNCachedData.h; path = ../../workspace/currant/source/ios/currant/Library3rd/RNCachingURLProtocol/RNCachedData.h; sourceTree = "<group>"; };
-		2CFF2D481B2FD53E0037B348 /* RNCachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNCachedData.m; path = ../../workspace/currant/source/ios/currant/Library3rd/RNCachingURLProtocol/RNCachedData.m; sourceTree = "<group>"; };
+		2C4AAA891B870C550048C4A6 /* RNCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCache.h; sourceTree = "<group>"; };
+		2C4AAA8A1B870C550048C4A6 /* RNCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCache.m; sourceTree = "<group>"; };
+		2C4AAA8B1B870C550048C4A6 /* RNCachedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCachedData.h; sourceTree = "<group>"; };
+		2C4AAA8C1B870C550048C4A6 /* RNCachedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCachedData.m; sourceTree = "<group>"; };
 		410A5453F1C9360FB4D5CD78 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		679C9CF31552085B1B4E437A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C800AAE6166E77B20027E1E5 /* NSString+Sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Sha1.h"; sourceTree = "<group>"; };
@@ -89,10 +89,10 @@
 				FB39D08214D5BB1F002A6D1A /* README.md */,
 				FB237EEA14D5B87400F30AD8 /* RNCachingURLProtocol.h */,
 				FB237EEB14D5B87400F30AD8 /* RNCachingURLProtocol.m */,
-				2CFF2D451B2FD53E0037B348 /* RNCache.h */,
-				2CFF2D461B2FD53E0037B348 /* RNCache.m */,
-				2CFF2D471B2FD53E0037B348 /* RNCachedData.h */,
-				2CFF2D481B2FD53E0037B348 /* RNCachedData.m */,
+				2C4AAA891B870C550048C4A6 /* RNCache.h */,
+				2C4AAA8A1B870C550048C4A6 /* RNCache.m */,
+				2C4AAA8B1B870C550048C4A6 /* RNCachedData.h */,
+				2C4AAA8C1B870C550048C4A6 /* RNCachedData.m */,
 				FB237EEC14D5B89700F30AD8 /* Reachability.m */,
 				FB237EED14D5B89700F30AD8 /* Reachability.h */,
 				FB237ED314D5B86100F30AD8 /* CachedWebView */,
@@ -247,11 +247,11 @@
 				FB39D07F14D5BB09002A6D19 /* RNCachingURLProtocol.m in Sources */,
 				FB39D08014D5BB09002A6D19 /* Reachability.m in Sources */,
 				FB237EDA14D5B86100F30AD8 /* main.m in Sources */,
-				2CFF2D4A1B2FD53E0037B348 /* RNCachedData.m in Sources */,
+				2C4AAA8E1B870C550048C4A6 /* RNCachedData.m in Sources */,
 				FB237EDE14D5B86100F30AD8 /* AppDelegate.m in Sources */,
 				FB237EE114D5B86100F30AD8 /* ViewController.m in Sources */,
 				C800AAE8166E77B20027E1E5 /* NSString+Sha1.m in Sources */,
-				2CFF2D491B2FD53E0037B348 /* RNCache.m in Sources */,
+				2C4AAA8D1B870C550048C4A6 /* RNCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

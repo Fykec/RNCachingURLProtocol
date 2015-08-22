@@ -14,6 +14,10 @@
     NSArray *_hostList;
 
     NSArray *_exceptionRules;
+
+    NSArray *_entityRequiredMIMETypes;
+
+    NSArray *_allowedStatusCodes;
 }
 
 @end
@@ -40,6 +44,14 @@
 
 - (void)setExceptionRules:(NSArray *)exceptionRules {
     _exceptionRules = exceptionRules;
+}
+
+- (void)setResponseEntityRequiredMIMETypes:(NSArray *)mimeTypes {
+    _entityRequiredMIMETypes = mimeTypes;
+}
+
+- (void)setAllowedResponseStatusCodes:(NSArray *)statusCodes {
+    _allowedStatusCodes = statusCodes;
 }
 
 - (BOOL)isRequestPassRules:(NSURLRequest *)request {
@@ -77,11 +89,37 @@
     return [[[EGOCache globalCache] allKeys] containsObject:[self keyForRequest:request]];
 }
 
+- (BOOL)isCachedResponseEntityRequired:(NSURLResponse *)response {
+    NSString *mimeType = response.MIMEType;
+    return [_entityRequiredMIMETypes containsObject:mimeType];
+}
+
+- (BOOL)isAllowedResponseStatusCode:(NSURLResponse *)response {
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
+        return [_allowedStatusCodes containsObject:@(statusCode)];
+    }
+    else {
+        return YES;
+    }
+}
+
 - (RNCachedData *)getCacheForRequest:(NSURLRequest *)request {
     if (![self isRequestPassRules:request]) {
         return nil;
     }
-    return (RNCachedData *)[[EGOCache globalCache] objectForKey:[self keyForRequest:request]];
+    RNCachedData *cache = (RNCachedData *)[[EGOCache globalCache] objectForKey:[self keyForRequest:request]];
+    if ([self isCachedResponseEntityRequired:cache.response]) {
+        if (cache.data) {
+            return cache;
+        }
+        else {
+            return nil;
+        }
+    }
+    else {
+        return cache;
+    }
 }
 
 - (void)saveCache:(RNCachedData *)cache forRequest:(NSURLRequest *)request {
@@ -89,8 +127,15 @@
         return;
     }
 
-    if (cache && cache.response) {
-        [[EGOCache globalCache] setObject:cache forKey:[self keyForRequest:request]];
+    if (cache && cache.response && [self isAllowedResponseStatusCode:cache.response]) {
+        if ([self isCachedResponseEntityRequired:cache.response]) {
+            if (cache.data) {
+                [[EGOCache globalCache] setObject:cache forKey:[self keyForRequest:request]];
+            }
+        }
+        else {
+            [[EGOCache globalCache] setObject:cache forKey:[self keyForRequest:request]];
+        }
     }
 }
 

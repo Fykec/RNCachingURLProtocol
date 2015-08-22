@@ -17,6 +17,10 @@
 
 - (void)setExceptionRules:(NSArray *)exceptionRules; //regex
 
+- (void)setResponseEntityRequiredMIMETypes:(NSArray *)mimeTypes;
+
+- (void)setAllowedResponseStatusCodes:(NSArray *)statusCodes;
+
 - (void)setDefaultTimeoutInterval:(NSTimeInterval)timeoutInterval;
 
 - (BOOL)isRequestCached:(NSURLRequest *)request;
